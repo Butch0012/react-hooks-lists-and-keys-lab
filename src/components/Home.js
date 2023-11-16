@@ -1,13 +1,16 @@
+
 import React from "react";
 
-function Home({ color, username, city }) {
+function NavBar() {
+  const links = ["home", "about", "projects"];
+
   return (
-    <div id="home">
-      <h1 style={{ color: color }}>
-        {username} is a Web Developer from {city}
-      </h1>
-    </div>
+    <nav>
+      {links.map((link, index) => (
+        <a key={index} href={`#${link}`}>{link}</a>
+      ))}
+    </nav>
   );
 }
 
-export default Home;
+export default NavBar;
